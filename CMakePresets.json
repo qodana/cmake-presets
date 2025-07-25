@@ -1,0 +1,42 @@
+{
+  "version": 3,
+  "configurePresets": [
+    {
+      "name": "bugs",
+      "generator": "Ninja",
+      "binaryDir": "build",
+      "cacheVariables": {
+        "PRESET_NAME": "bugs",
+        "BUGS": "ON"
+      }
+    },
+    {
+      "name": "nobugs",
+      "generator": "Ninja",
+      "binaryDir": "build",
+      "cacheVariables": {
+        "PRESET_NAME": "nobugs",
+        "BUGS": "OFF"
+      }
+    },
+    {
+      "name": "altlogic",
+      "generator": "Ninja",
+      "binaryDir": "build",
+      "cacheVariables": {
+        "PRESET_NAME": "altlogic",
+        "USE_ALT_LOGIC": "ON"
+      }
+    },
+    {
+      "name": "inherit",
+      "generator": "Ninja",
+      "inherits": ["bugs", "altlogic"],
+      "binaryDir": "build",
+      "cacheVariables": {
+        "PRESET_NAME": "inherit",
+        "EXTRA_ANALYSIS": "ON"
+      }
+    }
+  ]
+}
